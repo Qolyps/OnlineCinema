@@ -1,0 +1,301 @@
+/* Сброс стандартных стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Плавный фон с анимацией */
+@keyframes liquidLight {
+    0% {
+        background: linear-gradient(90deg, rgba(144, 179, 247, 0.6), rgba(253, 185, 197, 0.6), rgba(144, 179, 247, 0.6));
+        background-size: 800% 800%;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background: linear-gradient(90deg, rgba(180, 204, 247, 0.6), rgba(252, 211, 227, 0.6), rgba(180, 204, 247, 0.6));
+        background-size: 800% 800%;
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background: linear-gradient(90deg, rgba(144, 179, 247, 0.6), rgba(253, 185, 197, 0.6), rgba(144, 179, 247, 0.6));
+        background-size: 800% 800%;
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes lightBeamAnimation {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+@keyframes glowAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0.3;
+    }
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(144, 179, 247, 0.6), rgba(253, 185, 197, 0.6), rgba(144, 179, 247, 0.6));
+    background-size: 800% 800%;
+    animation: liquidLight 20s ease-in-out infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Слой с лучами света */
+.light-beams {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(144, 179, 247, 0.4) 50%);
+    animation: lightBeamAnimation 25s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Пульсирующий эффект света */
+.light-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 0 150px rgba(255, 255, 255, 0.6);
+    animation: glowAnimation 6s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Дополнительный слой для более сложного эффекта */
+.light-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, rgba(144, 179, 247, 0.3) 80%);
+    animation: lightBeamAnimation 35s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Основной контейнер */
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: 400% 400%;
+}
+
+/* Контент */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out;
+}
+
+/* Эффект плавного появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Форма для добавления фильма */
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #444;
+    border-radius: 12px;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+    input:focus {
+        border-color: #ff6600;
+        box-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    }
+
+button {
+    padding: 15px 30px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+    button:hover {
+        background-color: #e55c00;
+        transform: scale(1.05);
+    }
+
+/* Контейнер для карточек фильмов */
+.film-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Карточка фильма */
+.film-card {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+    .film-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+        transition: transform 0.3s ease;
+    }
+
+    .film-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .film-card h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin: 0;
+    }
+
+    .film-card p {
+        font-size: 16px;
+        color: #ccc;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        margin: 0;
+    }
+
+    /* Кнопки на карточке фильма */
+    .film-card button {
+        padding: 10px 20px;
+        background-color: #ff6600;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .film-card button:hover {
+            background-color: #e55c00;
+            transform: scale(1.05);
+        }
+
+    /* Эффект при наведении на карточку */
+    .film-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .film-container {
+        grid-template-columns: 1fr;
+    }
+
+    .film-card h3 {
+        font-size: 18px;
+    }
+
+    .film-card p {
+        font-size: 14px;
+    }
+
+    input {
+        width: 250px;
+    }
+
+    button {
+        width: 250px;
+    }
+}

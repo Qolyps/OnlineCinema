@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн кинотеатр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site.css"> <!-- Путь к файлу стилей -->
+</head>
+<body>
+    <div class="background">
+        <div class="content">
+            <h1>Добро пожаловать в онлайн кинотеатр</h1>
+            <p>Ищите фильмы, смотрите и добавляйте новые!</p>
+
+            <!-- Форма для добавления/редактирования фильма -->
+            <div class="form-container">
+                <input type="text" id="title" placeholder="Название фильма">
+                <input type="text" id="raiting" placeholder="Рейтинг">
+                <input type="number" id="year" placeholder="Год выпуска">
+                <button id="submit-button" onclick="submitFilm()">Добавить фильм</button>
+            </div>
+
+            <!-- Карточки фильмов -->
+            <div class="film-container" id="film-list">
+                <!-- Фильмы будут загружаться сюда через JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/site.js"></script> <!-- Подключение JS -->
+</body>
+</html>
