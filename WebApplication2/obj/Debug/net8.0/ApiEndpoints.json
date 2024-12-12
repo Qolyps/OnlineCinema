@@ -18,11 +18,17 @@
   {
     "ContainingType": "WebApplication2.Controllers.FilmController",
     "Method": "GetAllFilms",
-    "RelativePath": "api/tasks",
+    "RelativePath": "api/{controller}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "controller",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[WebApplication2.Models.Film, WebApplication2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -38,7 +44,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.FilmController",
     "Method": "CreateFilm",
-    "RelativePath": "api/tasks",
+    "RelativePath": "api/{controller}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -46,6 +52,11 @@
       {
         "Name": "film",
         "Type": "WebApplication2.Models.Film",
+        "IsRequired": true
+      },
+      {
+        "Name": "controller",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -64,7 +75,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.FilmController",
     "Method": "GetFilmById",
-    "RelativePath": "api/tasks/{id}",
+    "RelativePath": "api/{controller}/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -72,6 +83,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "controller",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -90,7 +106,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.FilmController",
     "Method": "UpdateFilm",
-    "RelativePath": "api/tasks/{id}",
+    "RelativePath": "api/{controller}/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -104,6 +120,11 @@
         "Name": "film",
         "Type": "WebApplication2.Models.Film",
         "IsRequired": true
+      },
+      {
+        "Name": "controller",
+        "Type": "",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -111,7 +132,7 @@
   {
     "ContainingType": "WebApplication2.Controllers.FilmController",
     "Method": "DeleteFilm",
-    "RelativePath": "api/tasks/{id}",
+    "RelativePath": "api/{controller}/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -119,6 +140,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "controller",
+        "Type": "",
         "IsRequired": true
       }
     ],

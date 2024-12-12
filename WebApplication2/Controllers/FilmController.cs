@@ -4,7 +4,7 @@ using WebApplication2.Models;
 namespace WebApplication2.Controllers
 {
     [ApiController]
-    [Route("api/tasks")]
+    [Route("api/{controller}")]
     public class FilmController : ControllerBase
     {
         private static List<Film> films = new List<Film>
